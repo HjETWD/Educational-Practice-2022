@@ -1,0 +1,11 @@
+.navbar {
+
+	$this: &;
+
+	& .uk-navbar-item,
+	& .uk-navbar-nav>li>a,
+	& .uk-navbar-toggle {
+		min-height: 3.75rem;
+	}
+
+}

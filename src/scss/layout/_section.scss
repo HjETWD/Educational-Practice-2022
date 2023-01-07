@@ -1,0 +1,46 @@
+.section {
+
+	$this: &;
+
+	position: relative;
+
+	&:not(#{$this}--small-padding) {
+		padding-block: 2rem;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__title {
+		margin: 0;
+		color: currentColor;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
+	&__body {
+		min-height: 3rem;
+	}
+
+	&--small-padding {
+		padding-block: .25rem;
+	}
+
+	&--default {
+	}
+
+	&--secondary {
+		color: #fff;
+
+		background-color: var(--section-secondary-background-color-dark, hsl(221 70% 69%));
+
+		:not(.uk-dark) & {
+			background-color: var(--section-secondary-background-color-light, hsl(221 70% 69%));
+		}
+
+	}
+
+}

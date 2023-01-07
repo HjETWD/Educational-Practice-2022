@@ -1,0 +1,43 @@
+.uk-search-navbar .uk-search-input {
+	font-size: inherit;
+}
+
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+	min-height: 100%;
+}
+
+.uk-background {
+
+	&-default {
+		background-color: var(--background-color-default-dark, hsl(0 0% 100%));
+
+		:not(.uk-dark) & {
+			background-color: var(--background-color-default-light, hsl(0 0% 100%));
+		}
+	}
+
+	&-muted {
+		background-color: var(--background-color-default-dark, hsl(204 100% 64%));
+
+		:not(.uk-dark) & {
+			background-color: var(--background-color-default-light, hsl(204 100% 64%));
+		}
+	}
+
+	&-primary {
+		background-color: var(--background-color-default-dark, hsl(204 100% 64%));
+
+		:not(.uk-dark) & {
+			background-color: var(--background-color-default-light, hsl(204 100% 64%));
+		}
+	}
+
+	&-secondary {
+		background-color: var(--background-color-default-dark, hsl(221 70% 69%));
+
+		:not(.uk-dark) & {
+			background-color: var(--background-color-default-light, hsl(221 70% 69%));
+		}
+	}
+
+}

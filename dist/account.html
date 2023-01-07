@@ -1,0 +1,1197 @@
+	<!DOCTYPE html>
+	<html lang="ru" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="color-scheme" content="dark light">
+		<title>Личный кабинет пользователя</title>
+		<link rel="stylesheet" href="css/uikit.min.css">
+		<link rel="stylesheet" href="css/style.min.css">
+		<script src="js/uikit.min.js" defer></script>
+		<script src="js/app.js" defer></script>
+	</head>
+	<body>
+
+		<header class="header">
+
+			<div class="uk-navbar-container" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+				<div class="uk-container uk-container-large">
+
+					<nav class="navbar" uk-navbar>
+
+						<div class="uk-navbar-left">
+							<a class="logo uk-navbar-item uk-logo" href="." aria-label="Вернуться на стартовую страницу">
+								<svg class="logo__icon icon icon__book-open" width="20" height="20" aria-hidden="true">
+									<use href="images/sprite.svg#ui__book-open"></use>
+								</svg>
+								<span class="logo__title uk-visible@s">Книги</span>
+							</a>
+
+							<ul class="uk-navbar-nav uk-visible@s">
+								<li>
+
+									<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse">
+										<span class="button__title">Каталог</span>
+									</button>
+
+								</li>
+								<li>
+
+									<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse">
+										<span class="button__title">В топе</span>
+									</button>
+
+								</li>
+								<li>
+
+									<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse" uk-toggle="target: #search_nav; animation: uk-animation-fade">
+										<span class="button__title">Поиск</span>
+									</button>
+
+								</li>
+							</ul>
+
+
+							<div id="search_nav" class="search uk-overlay uk-padding-remove-vertical uk-flex uk-flex-1 uk-flex-left uk-flex-middle uk-padding-remove-horizontal uk-visible@s" hidden>
+
+								<form class="uk-search uk-search-navbar uk-width-1-1">
+									<input name="search" class="search__input uk-search-input" type="search" placeholder="Что будем читать?" aria-label="Поиск" autofocus>
+									<button class="search__close uk-position-center-right button uk-button uk-button-link uk-navbar-toggle" type="button" uk-toggle="target: #search_nav; animation: uk-animation-fade" href="#">
+										<svg class="button__icon icon icon__close" width="16" height="16" aria-hidden="true">
+											<use href="images/sprite.svg#ui__times-circle"></use>
+										</svg>
+									</button>
+								</form>
+
+							</div>
+						</div>
+
+						<div class="uk-navbar-right">
+							<div class="uk-navbar-item">
+								<button class="uk-button uk-button-link" uk-toggle="target: #user_setting" type="button">
+									<img src="images/avatar.png" width="36" height="36" alt="">
+								</button>
+							</div>
+						</div>
+
+					</nav>
+
+				</div>
+			</div>
+
+		</header>
+
+		<section class="section section--secondary section--small-padding uk-background uk-background-secondary uk-hidden@s">
+			<div class="section__container uk-container uk-container-large">
+				<div class="section__body uk-flex uk-flex-around uk-position-relative">
+
+					<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse">
+						<span class="button__title">Каталог</span>
+						<svg class="button__icon icon icon__close" width="16" height="16" aria-hidden="true">
+							<use href="images/sprite.svg#ui__apps"></use>
+						</svg>
+					</button>
+
+					<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse">
+						<span class="button__title">В топе</span>
+						<svg class="button__icon icon icon__close" width="16" height="16" aria-hidden="true">
+							<use href="images/sprite.svg#ui__chart"></use>
+						</svg>
+					</button>
+
+					<button class="button uk-button uk-button-link uk-flex uk-flex-center uk-flex-middle uk-flex-row-reverse" uk-toggle="target: #search_mobile; animation: uk-animation-fade">
+						<span class="button__title">Поиск</span>
+						<svg class="button__icon icon icon__close" width="16" height="16" aria-hidden="true">
+							<use href="images/sprite.svg#ui__search"></use>
+						</svg>
+					</button>
+
+					<div id="search_mobile" class="search uk-overlay uk-padding-remove-vertical uk-position-cover uk-flex uk-flex-1 uk-flex-left uk-flex-middle uk-background-secondary uk-padding-remove-horizontal" hidden>
+
+						<form class="uk-search uk-search-navbar uk-width-1-1">
+							<input name="search" class="search__input uk-search-input" type="search" placeholder="Что будем читать?" aria-label="Поиск" autofocus>
+							<button class="search__close uk-position-center-right button uk-button uk-button-link uk-navbar-toggle" type="button" uk-toggle="target: #search_mobile; animation: uk-animation-fade" href="#">
+								<svg class="button__icon icon icon__close" width="16" height="16" aria-hidden="true">
+									<use href="images/sprite.svg#ui__times-circle"></use>
+								</svg>
+							</button>
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<main class="main uk-padding">
+			<div class="uk-container uk-container-large">
+
+				<h1>Личный кабинет пользователя</h1>
+
+				<ul class="uk-flex" uk-tab>
+					<li class="uk-active">
+						<a href="#payment">Баланс</a>
+					</li>
+					<li>
+						<a href="#bookmarks">Закладки</a>
+					</li>
+					<li>
+						<a href="#notification">Уведомления</a>
+					</li>
+				</ul>
+
+				<ul class="uk-switcher uk-margin">
+					<li>
+						<h2>Баланс аккаунта</h2>
+						<div class="uk-flex uk-margin-bottom">
+							<svg class="nav__icon icon icon__money-bill uk-margin-small-right" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#ui__money-bill"></use>
+							</svg>
+							<span class="nav__title">1&nbsp;500&nbsp;₽</span>
+						</div>
+						<div>
+							<div class="uk-card uk-card-default uk-card-body uk-card-hover">
+								<h3 class="uk-card-title">Пополнить баланс</h3>
+								<form class="uk-grid-small" uk-grid>
+									<div class="uk-inline uk-width-1-1">
+										<label class="uk-form-label">Номер карты</label>
+										<div class="uk-position-relative">
+											<span class="uk-form-icon">
+												<svg class="icon uk-icon" width="20" height="20">
+													<use href="/images/sprite.svg#ui__card-atm"></use>
+												</svg>
+											</span>
+											<input class="uk-input" type="text" placeholder="000 000 000 000" aria-label="Номер карты">
+										</div>
+									</div>
+									<div class="uk-width-1-6@s">
+										<label class="uk-form-label">Месяц</label>
+										<input class="uk-input" type="number" placeholder="0">
+									</div>
+									<div class="uk-width-1-6@s">
+										<label class="uk-form-label">Год</label>
+										<input class="uk-input" type="number" placeholder="00">
+									</div>
+									<div class="uk-width-2-3@s">
+										<div class="uk-grid-small" uk-grid>
+											<div class="uk-width-5-6@s">
+
+											</div>
+											<div class="uk-width-1-6@s">
+												<label class="uk-form-label">CVV</label>
+												<input class="uk-input" type="number" placeholder="000">
+											</div>
+										</div>
+									</div>
+									<div class="uk-inline uk-width-1-1">
+										<button class="uk-button uk-button-primary" type="button">Пополнить</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h2>Закладки</h2>
+
+						<div uk-filter="target: #bookmarks_filter">
+
+							<div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
+								<div>
+									<ul class="uk-subnav uk-subnav-pill" uk-margin>
+										<li class="uk-active" uk-filter-control>
+											<a href="#">
+												<span>Все книги</span>
+												<span class="badge">24</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<div>
+									<ul class="uk-subnav uk-subnav-pill" uk-margin>
+										<li uk-filter-control="filter: [data-color='blue']; group: data-color">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>Читаю</span>
+												<span class="badge">12</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-color='white']; group: data-color">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>В планах</span>
+												<span class="badge">8</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-color='black']; group: data-color">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>Брошено</span>
+												<span class="badge">4</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<div>
+									<ul class="uk-subnav uk-subnav-pill" uk-margin>
+										<li uk-filter-control="filter: [data-year='2022']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>2022</span>
+												<span class="badge">3</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-year='2021']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>2021</span>
+												<span class="badge">1</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-year='2019']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>2019</span>
+												<span class="badge">4</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-year='2007']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>2007</span>
+												<span class="badge">12</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-year='1993']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>1993</span>
+												<span class="badge">3</span>
+											</a>
+										</li>
+										<li uk-filter-control="filter: [data-year='1967']; group: year">
+											<a href="#">
+												<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+													<use href="images/sprite.svg#ui__bookmark"></use>
+												</svg>
+												<span>1967</span>
+												<span class="badge">1</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+
+							<ul id="bookmarks_filter" class="uk-child-width-1-1" uk-grid>
+
+								<li data-color="white" data-year="2022">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2022</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2021">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p2-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2021</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2022">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p1-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2022</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2019">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2019</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2019">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2019</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2019">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p2-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2019</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2007">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p1-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="1993">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p2-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">1993</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p1-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="black" data-year="2019">
+									<div class="uk-card uk-card-secondary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p5-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Брошено</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2019</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2007">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p5-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p5-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="black" data-year="2022">
+									<div class="uk-card uk-card-secondary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p6-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Брошено</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2022</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="black" data-year="1993">
+									<div class="uk-card uk-card-secondary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p4-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Брошено</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">1993</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p4-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2007">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p4-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="1993">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">1993</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="white" data-year="2007">
+									<div class="uk-card uk-card-default uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-1 uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p1-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">В планах</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p2-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p1-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр</span>
+													<span class="badge">жанр 1</span>
+													<span class="badge">жанр 2</span>
+													<span class="badge">жанр 3</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="blue" data-year="2007">
+									<div class="uk-card uk-card-primary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p3-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Читаю</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">2007</span>
+													<span class="badge">жанр жанр</span>
+													<span class="badge">жанр 44</span>
+													<span class="badge">жанр фвфыв</span>
+													<span class="badge">жанр АА</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li data-color="black" data-year="1967">
+									<div class="uk-card uk-card-secondary uk-card-small uk-card-hover uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+										<div class="uk-card-media-left uk-cover-container uk-width-1-4@s uk-width-1-6@m">
+											<img src="images/p4-130x190.png" alt="Название книги" uk-cover>
+											<canvas width="600" height="400"></canvas>
+										</div>
+										<div class="uk-width-expand">
+											<div class="uk-card-body">
+												<div class="uk-card-badge uk-label">
+													<svg class="nav__icon icon icon__bookmark" width="12" height="12" aria-hidden="true">
+														<use href="images/sprite.svg#ui__bookmark"></use>
+													</svg>
+													<span class="title">Брошено</span>
+												</div>
+												<h3 class="uk-card-title">Название книги</h3>
+												<p>Но убеждённость некоторых оппонентов выявляет срочную потребность благоприятных перспектив. Имеется спорная точка зрения, гласящая примерно следующее: независимые государства подвергнуты целой серии независимых исследований.</p>
+											</div>
+											<div class="uk-card-footer uk-flex uk-flex-wrap uk-flex-middle">
+												<div class="card__badges">
+													<span class="badge">1967</span>
+													<span class="badge">жанр</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+
+						</div>
+
+					</li>
+					<li>
+						<h2>Уведомления</h2>
+
+						<ul class="uk-child-width-1-1 uk-grid-collapse" uk-grid>
+
+								<li>
+									<div class="uk-alert-primary uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Название книги</h3>
+										<p>Книга "Название книги" теперь доступна для Вас. Приятного чтения!</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-success uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Пополнение баланса</h3>
+										<p>Вы успешно пополнили баланс на <span class="uk-text-bold">200&nbsp;₽</span>. Ваш текущий баланс: <span class="uk-text-bold">1&nbsp;500&nbsp;₽</span>.</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-primary uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Название книги</h3>
+										<p>Книга "Название книги" теперь доступна для Вас. Приятного чтения!</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-success uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Пополнение баланса</h3>
+										<p>Вы успешно пополнили баланс на <span class="uk-text-bold">1&nbsp;000&nbsp;₽</span>. Ваш текущий баланс: <span class="uk-text-bold">1&nbsp;300&nbsp;₽</span>.</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-danger uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Ошибка проведения платежа</h3>
+										<p>Произошла ошибка при зачислении средств на Ваш счет. Ваш текущий баланс: <span class="uk-text-bold">300&nbsp;₽</span>.</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-warning uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Истекает срок подписки</h3>
+										<p>Истекает срок подписки на "Название книги". Не забудьте пополнить ваш баланс. Ваш текущий баланс: <span class="uk-text-bold">300&nbsp;₽</span>.</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-success uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Пополнение баланса</h3>
+										<p>Вы успешно пополнили баланс на <span class="uk-text-bold">300&nbsp;₽</span>. Ваш текущий баланс: <span class="uk-text-bold">300&nbsp;₽</span>.</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="uk-alert-primary uk-margin-bottom" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Учетная запись подтверждена</h3>
+										<p>Вы успешно привязали свой телефон и email к учетной записи. Читайте книги в своё удовольствие!</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="" uk-alert>
+										<a class="uk-alert-close" uk-close></a>
+										<h3>Добро пожаловать</h3>
+										<p>Спасибо, что зарегистрировались на нашем сайте. Пожалуйста, для доступа ко всем функциям сайта, подтвердите указанные Вами email и телефон. Заранее спасибо!</p>
+									</div>
+								</li>
+
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container uk-container uk-container-large">
+
+				© Иван А. Е., 2022 - <span id="copyright_year">2022</span> г.
+
+			</div>
+		</footer>
+
+		<div id="user_setting" class="offcanvas" uk-offcanvas="flip: true; overlay: true">
+			<div class="offcanvas__body uk-offcanvas-bar uk-flex uk-flex-column uk-flex-between">
+
+				<ul class="nav uk-nav-default" uk-nav>
+					<li class="nav__item">
+						<div class="uk-flex uk-flex-between uk-width-1-1">
+
+							<a href="./account.html" class="uk-flex uk-flex-middle uk-text-decoration-none" aria-label="Перейти в ваш личный кабинет" title="Перейти в ваш личный кабинет">
+
+								<img class="uk-margin-small-right" src="images/avatar.png" width="36" height="36" alt="">
+
+								<div class="uk-flex uk-flex-column uk-flex-top">
+									<div class="uk-text-default uk-text-bold">Иван А. Е.</div>
+									<span class="badge">читатель</span>
+								</div>
+
+							</a>
+
+							<button class="offcanvas__close button uk-button uk-button-link" uk-toggle="target: #user_setting" aria-label="Закрыть боковое меню пользователя" title="Закрыть боковое меню пользователя">
+								<svg class="nav__icon icon icon__close" width="16" height="16" aria-hidden="true">
+									<use href="images/sprite.svg#ui__times-circle"></use>
+								</svg>
+							</button>
+
+						</div>
+					</li>
+					<li class="nav__item">
+						<a href="./account.html#payment" class="nav__link uk-flex uk-flex-between uk-flex-middle">
+							<span class="nav__title">1&nbsp;500&nbsp;₽</span>
+							<svg class="nav__icon icon icon__money-bill" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#ui__money-bill"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="./account.html#bookmarks" class="nav__link uk-flex uk-flex-between uk-flex-middle">
+							<span class="nav__title">Закладки</span>
+							<svg class="nav__icon icon icon__bookmark" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#ui__bookmark"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="./account.html#notification" class="nav__link uk-flex uk-flex-between uk-flex-middle">
+							<span class="nav__title">Уведомления</span>
+							<span class="uk-flex uk-flex-middle">
+								<span id="notification_count" class="badge uk-margin-small-right">10</span>
+								<svg id="notification_icon" class="nav__icon badge__icon icon icon__bell" width="16" height="16" aria-hidden="true">
+									<use href="images/sprite.svg#ui__bell"></use>
+								</svg>
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="./" class="nav__link uk-flex uk-flex-between uk-flex-middle">
+							<span class="nav__title">Выход</span>
+							<svg class="nav__icon icon icon__sign-out" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#ui__sign-out"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav uk-nav-default uk-nav-divider" uk-nav>
+					<li class="nav__item">
+						<button id="theme_switcher" class="button button--theme-switcher uk-button uk-button-link uk-flex uk-flex-between uk-flex-middle uk-width-1-1 uk-text-center">
+
+							<span class="nav__title">Переключить тему</span>
+
+							<svg class="nav__icon icon icon__theme-switcher" width="16" height="16" aria-hidden="true">
+								<use class="icon__moon" href="images/sprite.svg#ui__moon"></use>
+								<use class="icon__sun" href="images/sprite.svg#ui__sun"></use>
+							</svg>
+
+						</button>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</body>
+	</html>

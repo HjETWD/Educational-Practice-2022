@@ -1,0 +1,19 @@
+.badge {
+
+	$this: &;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .25em;
+
+	font-size: .75em;
+	padding: .25em .5em;
+	border-radius: .75em;
+	background-color: var(--badge-count-background-color, hsl(0 0% 10% / 10%));
+
+	.uk-dark & {
+		background-color: var(--badge-count-dark-background-color, hsl(0 0% 90% / 10%));
+	}
+
+}

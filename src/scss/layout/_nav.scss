@@ -1,0 +1,13 @@
+.nav {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nav-gap, .75rem);
+
+	&__item {
+
+		.uk-nav.uk-nav-divider>&:not(.uk-nav-header,.uk-nav-divider)+&:not(.uk-nav-header,.uk-nav-divider) {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+}

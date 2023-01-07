@@ -1,0 +1,56 @@
+body {
+	min-height: 100vh;
+}
+
+a {
+	transition: .2s ease-in-out;
+    transition-property: color, background-color, border-color, outline-color;
+}
+
+// :not(.uk-dark) {
+// 	& .uk-card-primary.uk-card-body :focus-visible,
+// 	& .uk-card-primary>:not([class*=uk-card-media]) :focus-visible,
+// 	& .uk-card-secondary.uk-card-body :focus-visible,
+// 	& .uk-card-secondary>:not([class*=uk-card-media]) :focus-visible,
+// 	& .uk-light :focus-visible,
+// 	& .uk-offcanvas-bar :focus-visible,
+// 	& .uk-overlay-primary :focus-visible,
+// 	& .uk-section-primary:not(.uk-preserve-color) :focus-visible,
+// 	& .uk-section-secondary:not(.uk-preserve-color) :focus-visible,
+// 	& .uk-tile-primary:not(.uk-preserve-color) :focus-visible,
+// 	& .uk-tile-secondary:not(.uk-preserve-color) :focus-visible {
+// 		outline-color: currentColor;
+// 	}
+// }
+.uk-card-primary.uk-card-body :focus-visible,
+.uk-card-primary>:not([class*=uk-card-media]) :focus-visible,
+.uk-card-secondary.uk-card-body :focus-visible,
+.uk-card-secondary>:not([class*=uk-card-media]) :focus-visible,
+.uk-light :focus-visible,
+.uk-offcanvas-bar :focus-visible,
+.uk-overlay-primary :focus-visible,
+.uk-section-primary:not(.uk-preserve-color) :focus-visible,
+.uk-section-secondary:not(.uk-preserve-color) :focus-visible,
+.uk-tile-primary:not(.uk-preserve-color) :focus-visible,
+.uk-tile-secondary:not(.uk-preserve-color) :focus-visible {
+	outline-color: currentColor;
+}
+
+.uk-slidenav {
+
+	outline-color: currentColor;
+	transition: .2s ease-in-out;
+    transition-property: color, background-color, border-color, outline-color;
+
+	:not(.uk-dark) & {
+		background-color: hsl(0 0% 0% / 15%);
+		color: hsl(0 0% 100% / 50%);
+
+		&:hover,
+		&:focus-visible {
+			background-color: hsl(0 0% 0% / 25%);
+			color: hsl(0deg 0% 100% / 95%);
+		}
+
+	}
+}

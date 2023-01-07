@@ -1,0 +1,125 @@
+.offcanvas {
+
+
+	// * кнопка закрытия
+	&__close {
+
+	}
+
+	// * затеняющий слой
+	&::before {
+		background-color: var(--offcanvas-overlay-background-color, hsl(0 0% 0% / 20%));
+	}
+
+	// * содержимое
+	&__body {
+		padding-block-start: 0;
+
+		color: var(--offcanvas-color, hsl(0 0% 10% / 70%));
+		background-color: var(--offcanvas-background-color, hsl(0 0% 100%));
+
+		& .nav:first-child {
+
+			& .nav__item:first-child {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 3.75rem;
+
+				margin-inline: -20px;
+				padding-inline: 20px;
+
+				@media (min-width: 640px) {
+					margin-inline: -30px;
+					padding-inline: 30px;
+				}
+
+				:not(.uk-dark) & {
+					background-color: var(--header-background-color, hsl(204deg, 100%, 64%));
+					color: var(--header-color, hsl(0 0% 100%));
+
+					& * {
+						color: inherit;
+
+						&:link {
+							color: var(--header-link-color, hsl(0 0% 100%));
+
+							&:hover,
+							&:focus-visible {
+								color: var(--header-link-hover-color, hsl(0 0% 100% / .9));
+							}
+						}
+					}
+
+					& .badge {
+						background-color: var(--badge-count-dark-background-color, hsl(0 0% 90% / 25%));
+					}
+				}
+
+				& > * {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					min-height: 3.75rem;
+				}
+			}
+		}
+
+		& .button {
+			padding: 5px 0;
+		}
+
+		& .uk-text-meta {
+			font-size: .75em;
+		}
+
+		& .uk-nav-default>li>a {
+			color: var(--offcanvas-color, hsl(0 0% 10% / 50%));
+		}
+
+		& .uk-nav-default>li>a:hover,
+		& .uk-nav-default>li>a:focus-visible {
+			color: var(--offcanvas-color-hover, hsl(0 0% 10% / 70%));
+		}
+
+		& .uk-text-meta {
+			color: var(--offcanvas-color, hsl(0 0% 10% / 50%));
+		}
+
+		& .uk-button-link {
+			color: var(--offcanvas-color, hsl(0 0% 10% / 50%));
+		}
+		& .uk-button-link:hover,
+		& .uk-button-link:focus-visible {
+			color: var(--offcanvas-color-hover, hsl(0 0% 10% / 70%));
+		}
+
+		.uk-dark & {
+
+			color: var(--offcanvas-color, hsl(0 0% 90% / 70%));
+			background-color: var(--offcanvas-background-color, hsl(0 0% 10%));
+
+			& .uk-nav-default>li>a {
+				color: var(--offcanvas-color, hsl(0 0% 90% / 50%));
+			}
+
+			& .uk-nav-default>li>a:hover,
+			& .uk-nav-default>li>a:focus-visible {
+				color: var(--offcanvas-color-hover, hsl(0 0% 90% / 70%));
+			}
+
+			& .uk-text-meta {
+				color: var(--offcanvas-color, hsl(0 0% 90% / 50%));
+			}
+
+			& .uk-button-link {
+				color: var(--offcanvas-color, hsl(0 0% 90% / 50%));
+			}
+			& .uk-button-link:hover,
+			& .uk-button-link:focus-visible {
+				color: var(--offcanvas-color-hover, hsl(0 0% 90% / 70%));
+			}
+		}
+	}
+
+}

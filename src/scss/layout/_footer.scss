@@ -1,0 +1,19 @@
+.footer {
+
+	$this: &;
+
+	font-size: .875rem;
+
+	&__container {
+		padding-block: 2rem;
+	}
+
+	:not(.uk-dark) & {
+
+		color: var(--header-color, hsl(0 0% 100% / .9));
+		background-color: var(--footer-background-color, hsl(204 100% 64%));
+
+	}
+
+
+}

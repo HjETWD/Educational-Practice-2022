@@ -1,0 +1,59 @@
+.button {
+
+	$this: &;
+
+	display: flex;
+	gap: .5em;
+
+	transition: .2s ease-in-out;
+    transition-property: color, background-color, border-color, outline-color;
+
+	:not(.uk-dark) & {
+
+		color: var(--button-color, hsl(0 0% 100%));
+
+		&:hover,
+		&:focus-visible {
+			color: var(--button-color, hsl(0 0% 100% / .8));
+		}
+		&:focus-visible {
+			outline-color: currentColor;
+		}
+
+	}
+
+	&.uk-button-link {
+		text-transform: none;
+	}
+
+	& > * {
+		pointer-events: none;
+	}
+
+	&--theme-switcher {
+		gap: 1em;
+
+			& .icon__moon {
+				display: none;
+			}
+			& .icon__sun {
+				display: block;
+			}
+
+		:not(.uk-dark) & {
+
+			& .icon__moon {
+				display: block;
+			}
+			& .icon__sun {
+				display: none;
+			}
+		}
+
+
+		&#{$this}--active {
+
+		}
+	}
+
+}

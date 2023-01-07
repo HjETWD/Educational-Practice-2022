@@ -1,0 +1,32 @@
+.header {
+
+	$this: &;
+
+	& .uk-search-input {
+	}
+
+	:not(.uk-dark) & {
+
+		color: var(--header-color, hsla(0 0% 96%));
+
+		& :focus-visible {
+			outline-color: currentColor;
+		}
+
+		& .uk-logo,
+		& .uk-button-link,
+		& .uk-navbar-item,
+		& .search {
+			color: inherit;
+		}
+
+		& .search::placeholder {
+			color: var(--header-input-placeholder-color, hsla(0 0% 80%));
+		}
+
+		& > .uk-navbar-container {
+			background-color: var(--header-background-color, hsl(204 100% 64%));
+		}
+	}
+
+}

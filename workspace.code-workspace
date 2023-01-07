@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+		"liveServer.settings.root": "/dist/",
+		"liveServer.settings.host": "127.0.0.1",
+		"liveServer.settings.donotShowInfoMsg": true,
+		"liveSassCompile.settings.watchOnLaunch": true,
+		"liveSassCompile.settings.showOutputWindowOn": "Error",
+		"liveSassCompile.settings.generateMap": true,
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": "/dist/css/",
+				"savePathReplacementPairs": null
+			}
+		],
+	}
+}

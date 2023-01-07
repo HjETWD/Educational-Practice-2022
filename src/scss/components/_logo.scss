@@ -1,0 +1,15 @@
+.logo {
+
+	$this: &;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&__title {
+		margin-top: -.25em;
+	}
+
+	&__icon {
+	}
+}
