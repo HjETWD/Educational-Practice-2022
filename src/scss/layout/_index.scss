@@ -1,17 +1,17 @@
 // * Шапка сайта
-@use 'header';
+@forward 'header';
 
 // * Секции сайта
-@use 'section';
+@forward 'section';
 
 // * Различные меню
-@use 'nav';
+@forward 'nav';
 
 // * Навигационное меню
-@use 'navbar';
+@forward 'navbar';
 
 // * Выплывающая боковая панель
-@use 'offcanvas';
+@forward 'offcanvas';
 
 // * Подвал сайта
-@use 'footer';
+@forward 'footer';

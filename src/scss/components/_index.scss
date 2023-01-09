@@ -1,17 +1,17 @@
 // * Кнопки
-@use 'logo';
+@forward 'logo';
 
 // * Кнопки
-@use 'button';
+@forward 'button';
 
 // * Иконки
-@use 'icon';
+@forward 'icon';
 
 // * Значки
-@use 'badge';
+@forward 'badge';
 
-// * Картчока
-@use 'card';
+// * Карточка
+@forward 'card';
 
 // * Поиск
-@use 'search';
+@forward 'search';

@@ -1,11 +1,14 @@
+// ! нормализация размера шрифта в фреймворке, относительно родительского слоя
 .uk-search-navbar .uk-search-input {
 	font-size: inherit;
 }
 
+// ! исправляет высоту элементов навигации
 .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
 	min-height: 100%;
 }
 
+// ! изменение цветовой схемы фонов
 .uk-background {
 
 	&-default {
